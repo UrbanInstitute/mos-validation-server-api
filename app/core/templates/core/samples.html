@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="{% static 'styles/app.css' %}" />
+        <title>Samples</title>
+    </head>
+    <body>
+        {% for sample in samples %}
+            <div class="center">
+                <div class="card">
+                    <img class="project__thumbnail" src="{{sample.attachment.url}}" alt="sample project__thumbnail" />
+                    <div class"card__body">
+                        <h3 class="project__title">{{sample.title}}</h3>
+                        <p class="project__info">{{sample.description}}</p>
+                    </div>
+                </div>
+            </div>
+            <hr class="dotted">
+        {% endfor %}
+    </body>
+</html>

@@ -1,0 +1,75 @@
+
+# Core
+pytz
+Django==4.0.6
+django-configurations
+#gunicorn==20.0.4
+#newrelic==5.24.0.153
+uWSGI>=2.0.19.1,<2.1
+django-debug-toolbar>=3.5.0,<3.6
+drf-spectacular>=0.25.1,<0.26
+
+# Authentication
+django-rest-knox>=4.2.0,<4.3
+
+
+# CORS
+django-cors-headers
+
+# For the persistence stores
+psycopg2-binary
+dj-database-url
+
+# Model Tools
+django-model-utils
+django_unique_upload
+
+# Rest apis
+djangorestframework==3.13.1
+Markdown
+django-filter
+drf-nested-routers
+django-extensions
+
+# Developer Tools
+ipdb
+ipython
+mkdocs
+flake8
+httpie
+
+# Testing
+mock
+factory-boy
+django-nose
+#nose-progressive
+coverage
+pinocchio
+moto[all]>=4.1.2,<4.2
+
+# Static and Media Storage
+django-storages
+boto3==1.26.31
+
+# Extras outside original cookiecutter
+# MySql
+django-mysql
+mysqlclient==2.1.1
+
+# Urban App Packages
+django-import-export
+drf-yasg==1.21.4
+
+# Urban security check packages
+# https://github.com/pyupio/safety
+safety
+
+# https://github.com/bartTC/pip-check/
+pip-check
+
+# https://github.com/PyCQA/bandit
+bandit
+
+# license check packages
+# https://pypi.org/project/pip-licenses/
+pip-licenses

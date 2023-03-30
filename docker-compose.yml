@@ -1,0 +1,36 @@
+version: '3.9'
+
+services:
+  app:
+    container_name: app_core_server
+    build:
+      context: .
+    command: >
+      sh -c "python manage.py wait_for_db &&
+             python manage.py migrate &&
+             python manage.py runserver 0.0.0.0:8000"
+    ports:
+      - 8000:8000
+    volumes:
+      - ./app:/app
+      - ./data/web:/vol/web
+      - ./app/static:/vol/web/static
+      - ./scripts:/scripts
+    env_file:
+      - .env
+    depends_on:
+      - db
+
+  db:
+    container_name: db_core_server
+    image: mysql:8
+    volumes:
+      - ./scripts/:/scripts
+      - mysql-data-local:/var/lib/mysql
+      - "/etc/timezone:/etc/timezone:ro"
+      - "/etc/localtime:/etc/localtime:ro"
+    env_file:
+      - .env
+
+volumes:
+  mysql-data-local:
